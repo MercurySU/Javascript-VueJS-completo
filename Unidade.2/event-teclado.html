@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="app">
-        
+
         <input v-on:keyup="onTecla($event)" type="text" placeholder="tecla">
         <br>
         <input v-on:keyup.enter="onTecla($event)" type="text" placeholder="enter">
@@ -21,7 +21,10 @@
         <input v-on:keyup.space="onTecla($event)" type="text" placeholder="space">
         <br>
         <input v-on:keyup.tab="onTecla($event)" type="text" placeholder="tab">
-
+        <br>
+        <input v-on:keyup.enter.space="onTecla($event)" type="text" placeholder="enter ou space">
+        <br>
+        <input v-on:keyup.ctrl.down="onTecla($event)" type="text" placeholder="ctrl + down">
     </div>
 
     <script>
@@ -37,6 +40,8 @@
             }
         })
 //doc eventos do teclado, dados do teclado
+// line 25 enter ou space para registro de dado
+//pode ser usado para programar atalhos de teclado line 27 --> ArrowDown
     </script>
     
 </body>
