@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        
+        <form>
+            <input type="text" placeholder="evento">
+            <button v-on:click="onSubmit('noMod',$event)" type="submit">enviar sem modificação</button>
+            <button v-on:click.prevent.stop="onSubmit('withMod',$event)" type="submit">enviar com modificação</button>
+        </form>
+
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                onClick: function(element, event){
+                    console.log(event.type, element)
+                },
+                onSubmit: function(event){
+                    console.log('Formulário enviado')
+                }
+            }
+        })      
+    //modificar event line:16 .prevent 'default'
+    //documentação de evento vue**
+    </script>
+    
+</body>
+</html>
