@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-on:click="onClick('freddie', $event)">Freddie Mercury
+            <button v-on:click.stop="onClick('mercury', $event)">click</button>
+        </p>
+        <button v-on:click="onClick('click',$event)"> click </button>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                onClick: function(element, event){
+                    console.log(event.type, element)
+                } 
+            }
+        })
+        //comportamento padrão: evento progragado line: 12 - 14
+        //para stop progragação, no template colocar .stop line: 13
+    </script>
+    
+</body>
+</html>
