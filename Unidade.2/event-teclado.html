@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        
+        <input v-on:keyup="onTecla($event)" type="text" placeholder="tecla">
+        <br>
+        <input v-on:keyup.enter="onTecla($event)" type="text" placeholder="enter">
+        <br>
+        <input v-on:keyup.delete="onTecla($event)" type="text" placeholder="delete">
+        <br>
+        <input v-on:keyup.down="onTecla($event)" type="text" placeholder="down">
+        <br>
+        <input v-on:keyup.space="onTecla($event)" type="text" placeholder="space">
+        <br>
+        <input v-on:keyup.tab="onTecla($event)" type="text" placeholder="tab">
+
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                onTecla: function(event){
+                    console.log("tecla: " + event.key )
+                }
+            }
+        })
+//doc eventos do teclado, dados do teclado
+    </script>
+    
+</body>
+</html>
