@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{frase}}
+    <p v-once>A: {{letra}}</p><br>
+    <p>B:{{getLetra()}}</p>
+    
+
+    </div>
+        
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                frase:'hello wordzinho',
+                letra:'a',
+            },
+            methods: {
+                getLetra: function() {
+                this.letra = "b" 
+                return this.letra}
+            }
+        });
+        //fund 1 e 2 são estruturas parecidas mas funciona do mesmo jeito
+        //vaitomanucu 2 hora pra usar v-once
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed Properties</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+</head>
+<body style="background-color: black; color:gold; font-size: 25px;">
+    <h2>Dados Computados</h2>
+    <div style="background-color: black;color:gold;" id="app">
+        message for the future: {{messageCapsLock}} <br>
+        <hr>
+        message for the future: {{messageLowerCase}}
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                message: 'hey, i know you can do it.'
+            },
+            methods:{
+                
+            },
+            computed:{
+                messageCapsLock: function () {
+                    return this.message.toUpperCase()
+                },
+                messageLowerCase: function(){
+                    return this.message.toLowerCase()
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
